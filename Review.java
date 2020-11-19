@@ -209,6 +209,8 @@ public class Review {
     // return number of stars
     return stars; 
   }
+  
+  /** Creates a Fake Review */
   public static String fakeReview(String fileName)
   {
     // sets up a new string with nothing in it to prepare for review
@@ -217,11 +219,10 @@ public class Review {
     String adjective1 = randomAdjective();
     String adjective2 = randomAdjective();
     // sets up the separate parts of the string to make room for new adj
-    String *part1 = review.substring(0, review.indexOf("*"));
-    String part2 = review.substring(0, review.lastIndexOf("*"));
-    String *part2 = review.substring(part2.indexOf(" "), part2.indexOf("*"));
-    String part4 = review.substring(review.indexOf("*"));
-   
-  
+    String part1 = review.substring(0, review.indexOf("*terrible"));
+    String part2 = review.substring(review.indexOf("*terrible") + 8, review.indexOf("*chewy"));
+    String part3 = review.substring(review.indexOf("*chewy") + 5);
+    // returns the fake review with all parts set up beforehand
+    return part1 + adjective1 + part2 + adjective2 + part3;
   }
 }
