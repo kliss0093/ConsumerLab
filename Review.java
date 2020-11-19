@@ -209,4 +209,19 @@ public class Review {
     // return number of stars
     return stars; 
   }
+  public static String fakeReview(String fileName)
+  {
+    // sets up a new string with nothing in it to prepare for review
+    String review = textToString( simpleReview );
+    // gets random adjectives to fill in blank spots in review
+    String adjective1 = randomAdjective();
+    String adjective2 = randomAdjective();
+    // sets up the separate parts of the string to make room for new adj
+    String *part1 = review.substring(0, review.indexOf("*"));
+    String part2 = review.substring(0, review.lastIndexOf("*"));
+    String *part2 = review.substring(part2.indexOf(" "), part2.indexOf("*"));
+    String part4 = review.substring(review.indexOf("*"));
+   
+  
+  }
 }
