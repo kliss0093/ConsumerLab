@@ -214,7 +214,7 @@ public class Review {
   public static String fakeReview(String fileName)
   {
     // sets up a new string with nothing in it to prepare for review
-    String review = textToString( simpleReview );
+    String review = textToString(fileName);
     // gets random adjectives to fill in blank spots in review
     String adjective1 = randomAdjective();
     String adjective2 = randomAdjective();
