@@ -196,13 +196,16 @@ public class Review {
   public static int starRating(String filename)
   {
     // call the totalSentiment method with the fileName
-
+    double sentval = totalSentiment(filename);
     // determine number of stars between 0 and 4 based on totalSentiment value 
     int stars = 0; // change this!
     // write if statements here
+    if (sentval >= 15) stars = 5;
+    else if (sentval >= 9) stars = 4;
+    else if (sentval >= 3) stars = 3;
+    else if (sentval >= -2) stars = 2;
+    else stars = 1;
 
-
-  
     // return number of stars
     return stars; 
   }
