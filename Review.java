@@ -215,9 +215,18 @@ public class Review {
   {
     // sets up a new string with nothing in it to prepare for review
     String review = textToString(fileName);
+    double rand = Math.random();
+    String adjective1;
+    String adjective2;
     // gets random adjectives to fill in blank spots in review
-    String adjective1 = randomAdjective();
-    String adjective2 = randomAdjective();
+    if (rand < .5){
+        adjective1 = randomPositiveAdj();
+        adjective2 = randomPositiveAdj();
+    }
+    else{
+        adjective1 = randomNegativeAdj();
+        adjective2 = randomNegativeAdj();
+    }
     // sets up the separate parts of the string to make room for new adj
     String part1 = review.substring(0, review.indexOf("*terrible"));
     String part2 = review.substring(review.indexOf("*terrible") + 8, review.indexOf("*chewy"));
